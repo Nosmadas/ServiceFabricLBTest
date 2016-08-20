@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceTwo.Controllers
 {
@@ -22,7 +18,7 @@ namespace ServiceTwo.Controllers
         [Route("api/bad")]
         public IActionResult Toggle()
         {
-            ServiceTwoEventSource.Current.Log($"Setting bad mode to {!BadMode} on {Program.NodeName}");
+            ServiceTwoEventSource.Current.Log($"Setting bad mode to {!BadMode} on {Program.NodeName} for ServiceTwo");
 
             BadMode = !BadMode;
             return Ok();
