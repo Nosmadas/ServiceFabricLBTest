@@ -22,7 +22,7 @@ namespace ServiceTwo.Controllers
         [Route("api/bad")]
         public IActionResult Toggle()
         {
-            ServiceOneEventSource.Current.Log($"Setting bad mode to {!BadMode} on {Program.NodeName}");
+            ServiceTwoEventSource.Current.Log($"Setting bad mode to {!BadMode} on {Program.NodeName}");
 
             BadMode = !BadMode;
             return Ok();

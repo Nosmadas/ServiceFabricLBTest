@@ -26,7 +26,7 @@ namespace ServiceOne
 
             app.Run(async (context) =>
             {
-                var message = $"Hello World. Love {Program.NodeName} :)";
+                var message = $"Hello World. Love {Program.NodeName} running ServiceOne :)";
                 ServiceOneEventSource.Current.Log($"Writing {message}");
                 await context.Response.WriteAsync(message);
             });

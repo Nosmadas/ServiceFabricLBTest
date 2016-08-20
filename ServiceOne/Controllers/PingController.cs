@@ -18,6 +18,8 @@ namespace ServiceOne.Controllers
         [Route("api/bad")]
         public IActionResult Toggle()
         {
+            ServiceOneEventSource.Current.Log($"Setting bad mode to {!BadMode} on {Program.NodeName}");
+
             BadMode = !BadMode;
             return Ok();
         }
