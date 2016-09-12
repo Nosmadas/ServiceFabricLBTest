@@ -1,14 +1,14 @@
 ﻿using System.Diagnostics.Tracing;
 using static System.Net.WebUtility;
 
-namespace ServiceOne
+namespace GatewayService
 {
-    [EventSource(Name = "Adamson-ServiceFabric-ServiceOne")]
-    public sealed class ServiceOneEventSource : EventSource
+    [EventSource(Name = "Adamson-ServiceFabric-GatewayService")]
+    public sealed class GatewayServiceEventSource : EventSource
     {
-        public static ServiceOneEventSource Current = new ServiceOneEventSource();
+        public static GatewayServiceEventSource Current = new GatewayServiceEventSource();
 
-        private ServiceOneEventSource() : base(EventSourceSettings.EtwSelfDescribingEventFormat | EventSourceSettings.ThrowOnEventWriteErrors) { }
+        private GatewayServiceEventSource() : base(EventSourceSettings.EtwSelfDescribingEventFormat | EventSourceSettings.ThrowOnEventWriteErrors) { }
 
         [Event(1, Level = EventLevel.Informational, Message = "{0}", Version = 0)]
         public void Log(string message)

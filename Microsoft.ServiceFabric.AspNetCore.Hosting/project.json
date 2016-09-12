@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "dependencies": {
+    "Microsoft.AspNetCore.Hosting": "1.0.0",
+    "System.Collections.Immutable": "1.2.0"
+  },
+  "frameworks": {
+    "net46": {
+      "dependencies": {
+        "Microsoft.ServiceFabric": "5.1.150",
+        "Microsoft.ServiceFabric.Services": "2.1.150"
+      }
+    }
+  }
+}

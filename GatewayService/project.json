@@ -1,15 +1,15 @@
 {
   "dependencies": {
-    "Microsoft.ApplicationInsights": "2.2.0-beta1",
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
-    "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.ServiceFabric": "5.1.150",
     "Microsoft.ServiceFabric.Data": "2.1.150",
     "Microsoft.ServiceFabric.Services": "2.1.150",
-    "System.Text.Encodings.Web": "4.0.0"
+    "Microsoft.ServiceFabric.AspNetCore.Gateway": "1.0.0-*",
+    "Microsoft.ServiceFabric.AspNetCore.Hosting": "1.0.0-*",
+    "System.Text.Encodings.Web": "4.0.0",
+    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0"
   },
 
   "tools": {

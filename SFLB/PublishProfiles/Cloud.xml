@@ -20,6 +20,6 @@
                                     AzureActiveDirectory="true"
                                     ServerCertThumbprint="0123456789012345678901234567890123456789" />
   -->
-  <ClusterConnectionParameters ConnectionEndpoint="" />
+  <ClusterConnectionParameters ConnectionEndpoint="seanadamsoncluster.westeurope.cloudapp.azure.com:19000" AzureActiveDirectory="true" ServerCertThumbprint="CC3BB34FF7DD42B5D7E46D868F6A4DD2D14FF54F" />
   <ApplicationParameterFile Path="..\ApplicationParameters\Cloud.xml" />
 </PublishProfile>

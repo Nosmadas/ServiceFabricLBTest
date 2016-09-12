@@ -27,6 +27,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GatewayService\GatewayService.xproj" />
     <ProjectReference Include="..\ServiceOne\ServiceOne.xproj" />
     <ProjectReference Include="..\ServiceTwo\ServiceTwo.xproj" />
   </ItemGroup>

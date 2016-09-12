@@ -12,6 +12,7 @@ namespace ServiceOne
     public class Program
     {
         public static string NodeName { get; private set; }
+        public static bool BadMode { get; set; } = false;
 
         // Entry point for the application.
         public static void Main(string[] args)
@@ -62,7 +63,6 @@ namespace ServiceOne
                 var nodeContext = FabricRuntime.GetNodeContext();
                 NodeName = nodeContext.NodeName;
                 ServiceOneEventSource.Current.Log($"NodeName: {NodeName}");
-
 
                 _webHost = new WebHostBuilder().UseKestrel()
                                                .UseContentRoot(Directory.GetCurrentDirectory())

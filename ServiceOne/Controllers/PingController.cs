@@ -4,15 +4,14 @@ namespace ServiceOne.Controllers
 {
     public class PingController : Controller
     {
-        private bool BadMode = false;
-
         [Route("api/ping")]
         public IActionResult Ping()
         {
-            ServiceOneEventSource.Current.Log($"Received ping request, bad mode is set to {BadMode}");
-
-            if (BadMode)
+            if (Program.BadMode)
+            {
+                ServiceOneEventSource.Current.Log("Returning bad request.");
                 return BadRequest();
+            }
 
             return Ok();
         }
@@ -22,7 +21,8 @@ namespace ServiceOne.Controllers
         {
             ServiceOneEventSource.Current.Log($"Enabling Good Mode on {Program.NodeName} for ServiceOne");
 
-            BadMode = false;
+            Program.BadMode = false;
+
             return Ok();
         }
 
@@ -31,7 +31,8 @@ namespace ServiceOne.Controllers
         {
             ServiceOneEventSource.Current.Log($"Enabling Bad Mode to on {Program.NodeName} for ServiceOne");
 
-            BadMode = true;
+            Program.BadMode = true;
+
             return Ok();
         }
     }

@@ -12,6 +12,7 @@ namespace ServiceTwo
     public class Program
     {
         public static string NodeName { get; private set; }
+        public static bool BadMode { get; set; } = false;
 
         // Entry point for the application.
         public static void Main(string[] args)
