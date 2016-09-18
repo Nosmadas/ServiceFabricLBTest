@@ -58,13 +58,14 @@ namespace ServiceOne
             {
                 var endpoint = FabricRuntime.GetActivationContext().GetEndpoint(_endpointName);
 
-                string serverUrl = $"{endpoint.Protocol}://{FabricRuntime.GetNodeContext().IPAddressOrFQDN}:{endpoint.Port}";
+                //string serverUrl = $"{endpoint.Protocol}://{FabricRuntime.GetNodeContext().IPAddressOrFQDN}:{endpoint.Port}/one";
+                string serverUrl = $"{endpoint.Protocol}://+:{endpoint.Port}/One";
 
                 var nodeContext = FabricRuntime.GetNodeContext();
                 NodeName = nodeContext.NodeName;
                 ServiceOneEventSource.Current.Log($"NodeName: {NodeName}");
 
-                _webHost = new WebHostBuilder().UseKestrel()
+                _webHost = new WebHostBuilder().UseWebListener()
                                                .UseContentRoot(Directory.GetCurrentDirectory())
                                                .UseStartup<Startup>()
                                                .UseUrls(serverUrl)

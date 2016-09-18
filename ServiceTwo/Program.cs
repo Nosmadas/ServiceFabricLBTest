@@ -64,9 +64,10 @@ namespace ServiceTwo
                 NodeName = nodeContext.NodeName;
                 ServiceTwoEventSource.Current.Log($"NodeName: {NodeName}");
 
-                string serverUrl = $"{endpoint.Protocol}://{FabricRuntime.GetNodeContext().IPAddressOrFQDN}:{endpoint.Port}";
+                //string serverUrl = $"{endpoint.Protocol}://{FabricRuntime.GetNodeContext().IPAddressOrFQDN}:{endpoint.Port}";
+                string serverUrl = $"{endpoint.Protocol}://+:{endpoint.Port}/Two";
 
-                _webHost = new WebHostBuilder().UseKestrel()
+                _webHost = new WebHostBuilder().UseWebListener()
                                                .UseContentRoot(Directory.GetCurrentDirectory())
                                                .UseStartup<Startup>()
                                                .UseUrls(serverUrl)

@@ -16,7 +16,7 @@ namespace GatewayService
         }
         private static AspNetCoreCommunicationContext CreateAspNetCoreCommunicationContext()
         {
-            var webHost = new WebHostBuilder().UseKestrel()
+            var webHost = new WebHostBuilder().UseWebListener()
                                               .UseContentRoot(Directory.GetCurrentDirectory())
                                               .UseStartup<Startup>()
                                               .UseServiceFabricEndpoint("GatewayTypeEndpoint")
